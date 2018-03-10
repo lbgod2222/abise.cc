@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何在同一机器上管理两个Github账号？ | Abise</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="欲帮朋友找个地方安置下写的东西，又不想随随便便让别人看到，就想帮他在Github上注册个gitpage，用hexo简易搭建个博客，却在上传的时候遇到了错:曾经用git config –global user.name / email 设置过个人信息因此又重新设置成另一个账号的信息，这时上传会报错显示之前的账户名余威犹在阴魂不散，学习网上所说重新配置SSH，1ssh-keygen -t rsa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在同一机器上管理两个Github账号？">
+<meta property="og:url" content="http://yoursite.com/2017/06/22/如何在同一机器上管理两个Github账号？/index.html">
+<meta property="og:site_name" content="Abise">
+<meta property="og:description" content="欲帮朋友找个地方安置下写的东西，又不想随随便便让别人看到，就想帮他在Github上注册个gitpage，用hexo简易搭建个博客，却在上传的时候遇到了错:曾经用git config –global user.name / email 设置过个人信息因此又重新设置成另一个账号的信息，这时上传会报错显示之前的账户名余威犹在阴魂不散，学习网上所说重新配置SSH，1ssh-keygen -t rsa">
+<meta property="og:updated_time" content="2017-06-21T16:57:19.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在同一机器上管理两个Github账号？">
+<meta name="twitter:description" content="欲帮朋友找个地方安置下写的东西，又不想随随便便让别人看到，就想帮他在Github上注册个gitpage，用hexo简易搭建个博客，却在上传的时候遇到了错:曾经用git config –global user.name / email 设置过个人信息因此又重新设置成另一个账号的信息，这时上传会报错显示之前的账户名余威犹在阴魂不散，学习网上所说重新配置SSH，1ssh-keygen -t rsa">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/CV">简历</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-如何在同一机器上管理两个Github账号？" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/06/22/如何在同一机器上管理两个Github账号？/" class="article-date">
+  <time datetime="2017-06-21T16:20:36.000Z" itemprop="datePublished">2017-06-22</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      如何在同一机器上管理两个Github账号？
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>　　欲帮朋友找个地方安置下写的东西，又不想随随便便让别人看到，就想帮他在Github上注册个gitpage，用hexo简易搭建个博客，却在上传的时候遇到了错:<br>曾经用git config –global user.name / email 设置过个人信息因此又重新设置成另一个账号的信息，这时上传会报错显示之前的账户名余威犹在阴魂不散，学习网上所说重新配置SSH，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"your-email-address"</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>问题仍是如此，遂想是否能在同一台机器上共生呢？<br>首先，将不同的keygen注册为不同命名文件<br>.ssh<br>　－ id_rsa_myself<br>　－ id_rsa_zhang<br>然后，做出一个config文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>在其中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Host github.myself</div><div class="line">  HostName github.com</div><div class="line">  User git</div><div class="line">  IdentityFile ~/.ssh/id_rsa_myself</div><div class="line"></div><div class="line">Host github.zhang</div><div class="line">  HostName github.com</div><div class="line">  User git</div><div class="line">  IdentityFile ~/.ssh/id_rsa_zhang</div></pre></td></tr></table></figure></p>
+<p>然后在引用上，方式为git@git.myself:<strong><em>*/</em></strong>问题顺利解决</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/遇坑留念/">遇坑留念</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/11/构建工具Nightmare-JS与Travis-CI/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2017 ABISE<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Abise</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Abise">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Abise">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Abise">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/CV">简历</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-如何在同一机器上管理两个Github账号？" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/06/22/如何在同一机器上管理两个Github账号？/" class="article-date">
+  <time datetime="2017-06-21T16:20:36.000Z" itemprop="datePublished">2017-06-22</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/06/22/如何在同一机器上管理两个Github账号？/">如何在同一机器上管理两个Github账号？</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>　　欲帮朋友找个地方安置下写的东西，又不想随随便便让别人看到，就想帮他在Github上注册个gitpage，用hexo简易搭建个博客，却在上传的时候遇到了错:<br>曾经用git config –global user.name / email 设置过个人信息因此又重新设置成另一个账号的信息，这时上传会报错显示之前的账户名余威犹在阴魂不散，学习网上所说重新配置SSH，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"your-email-address"</span></div></pre></td></tr></table></figure></p>
+			
+				<p class="article-more-link">
+					<a href="/2017/06/22/如何在同一机器上管理两个Github账号？/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/遇坑留念/">遇坑留念</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-构建工具Nightmare-JS与Travis-CI" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/05/11/构建工具Nightmare-JS与Travis-CI/" class="article-date">
+  <time datetime="2017-05-11T10:01:54.000Z" itemprop="datePublished">2017-05-11</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/05/11/构建工具Nightmare-JS与Travis-CI/">自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<h1 id="构建工具是啥？"><a href="#构建工具是啥？" class="headerlink" title="构建工具是啥？"></a>构建工具是啥？</h1><p>　　说到构建工具，我往往会在前面加「自动化」三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手的。如今有很多成熟的构建工具可供使用，webpack、grunt等等很是流行，但是苦于没有什么大项目的经验，对这些的应用经验少之又少，这就待以后填坑了。作为一个开源的持续集成构建项目，我们可以将自己的github项目加入到他的构建序列中来进行自动构建。</p>
+<p><hr /></p>
+<h3 id="如何关联github与Travis-CI？"><a href="#如何关联github与Travis-CI？" class="headerlink" title="如何关联github与Travis-CI？"></a>如何关联github与Travis-CI？</h3>
+			
+				<p class="article-more-link">
+					<a href="/2017/05/11/构建工具Nightmare-JS与Travis-CI/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-查重" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/05/08/查重/" class="article-date">
+  <time datetime="2017-05-08T09:34:06.000Z" itemprop="datePublished">2017-05-08</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/05/08/查重/">查重函数</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>##应试教育了遗留的后患中背死书是最难改的，当初心急背了不少面试题，结果放下来回头再一提，脑袋里又是一清二白，随时把理解当做享受这也是我的一个进程目标。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">###查重一回合</span></div><div class="line"></div><div class="line">&lt;script language=<span class="string">"javascript"</span>&gt;</div><div class="line">	Array.prototype.chachong1 = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		var result = [this[0]];</div><div class="line">		<span class="keyword">for</span> (var i =1;i&lt;this.length ;i++ )</div><div class="line">		&#123;</div><div class="line">			var repeat = <span class="literal">false</span>;</div><div class="line">			<span class="keyword">for</span> (var j =0;j&lt;this.length ;j++ )</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">if</span> (this[i] == result[j])</div><div class="line">				&#123;</div><div class="line">					repeat = <span class="literal">true</span>;</div><div class="line">					<span class="built_in">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (!repeat)</div><div class="line">			&#123;</div><div class="line">				result.push(this[i]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">return</span> result;</div><div class="line">	&#125;</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure>
+			
+				<p class="article-more-link">
+					<a href="/2017/05/08/查重/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-超好用的同步测试应用-Browser-sync" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/04/04/超好用的同步测试应用-Browser-sync/" class="article-date">
+  <time datetime="2017-04-04T13:38:53.000Z" itemprop="datePublished">2017-04-04</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/04/04/超好用的同步测试应用-Browser-sync/">超好用的同步测试应用--Browser-sync</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>　　很惭愧，当初接触到socket.io的时候权当它是一个单单为chat功能开发的一个具体应用，直到我看到了这个Browser-sync，默认端口3000，接受同一IP字段的访问，当.html .css .js等文件发生改变的时候就会接受，emit改变到view层，真正触一发而动全身（虽说实话起作用目前看起来就是省了一次手动刷新），但至少看起来很cool有没有…<br>
+			
+				<p class="article-more-link">
+					<a href="/2017/04/04/超好用的同步测试应用-Browser-sync/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-JS做VersionCompare" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/03/15/JS做VersionCompare/" class="article-date">
+  <time datetime="2017-03-15T03:28:32.000Z" itemprop="datePublished">2017-03-15</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/03/15/JS做VersionCompare/">JS做VersionCompare</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><h3>　　陆陆续续投了许多前端简历，姿态低下有些愧对这些年学的英语=_=，有几个邀请面试也是胆战心惊，北京水深，防备万般都难免要被坑个几回合，唉，来京慎重啊。话说这日来了个消息让我用JS弄个VersionCompare出来，用以外部程序比较版本。一时间云里雾里，特地搜索名词，有个PHP关键字的结果传入三个参数，可以返回三个结果，那好吧，就用JS还原吧…</h3></p>
+<p><p>下面上代码</p><br>
+			
+				<p class="article-more-link">
+					<a href="/2017/03/15/JS做VersionCompare/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-邮箱CV" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/03/08/邮箱CV/" class="article-date">
+  <time datetime="2017-03-08T01:25:57.000Z" itemprop="datePublished">2017-03-08</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/03/08/邮箱CV/">邮箱CV</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>投简历的时候想试试利用源代码功能稍微做出一些不同的东西，虽说极有可能会被拦截，但万一被用心的人看到了呢(≧▽≦)/… 全幅仅仅用了标签+内联样式表，并排除了position和float的使用，因此在定位上很粗糙，需要酌情修改一些数据..<br><br/><br/><br/></p>
+<hr>
+<p><strong>先上图</strong><br><img src="http://p1.bqimg.com/567571/6d40e8c932207937.png" alt="163邮箱显示"><br>
+			
+				<p class="article-more-link">
+					<a href="/2017/03/08/邮箱CV/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-阿兰，醒醒！" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/03/06/阿兰，醒醒！/" class="article-date">
+  <time datetime="2017-03-06T14:46:45.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/03/06/阿兰，醒醒！/">阿兰，醒醒！</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><img src="http://p1.bqimg.com/567571/6b97860bbc4e7484.jpg" alt="心灵杀手"></p>
+<blockquote>
+<p>作为第一个打通关的恐怖游戏，心灵杀手在本人心中还是有些地位的，与同时代的同题材作品相比亦算出挑，就此被我列为不得不纪念的的佳作之一</p>
+</blockquote>
+			
+				<p class="article-more-link">
+					<a href="/2017/03/06/阿兰，醒醒！/#more">MORE &gt;&gt;</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏/">游戏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-HEXO首坑" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/03/05/HEXO首坑/" class="article-date">
+  <time datetime="2017-03-05T13:12:03.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/03/05/HEXO首坑/">HEXO首坑</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p><strong>由</strong>于未知原因，想要像通常那样利用在根目录用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<p>的时候会将不单单public而是整个根目录被push到github上，此时的解决方案：</p>
+<p><ol></ol></p>
+<p><li>cd public //进入public文件夹</li></p>
+<p><li>git init　//否则会报错</li></p>
+<p><li>hexo d 　//deploy这时可行</li><br></p>
+<blockquote>
+<p>虽然个人并不喜如此不知根底就凑活了事的做法，暂且先留一个悬念，赶明去探探底看看到底是啥原因…</p>
+</blockquote>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/遇坑留念/">遇坑留念</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-第一篇博文" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/03/01/第一篇博文/" class="article-date">
+  <time datetime="2017-03-01T06:58:38.000Z" itemprop="datePublished">2017-03-01</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2017/03/01/第一篇博文/">第一篇博文</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p><strong>实</strong>话说从没有长久的写过这种东西，但毕竟我是一种感性的动物，也尝过遗忘的痛苦，这个博客姑且也算是一种对先前20年间一切失之交臂的纪念。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/纪念日/">纪念日</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2017 ABISE<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js | Abise</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="构建工具是啥？　　说到构建工具，我往往会在前面加「自动化」三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手的。如今有很多成熟的构建工具可供使用，webpack、grunt等等很是流行，但是苦于没有什么大项目的经验，对这些的应用经验少之又少，这就待以后填坑了。作为一个开源的持续集成构建项目，我们可以将自己的github项目加入到他的构建序列中来进行自动构建。
+
+如何关联gith">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/构建工具Nightmare-JS与Travis-CI/index.html">
+<meta property="og:site_name" content="Abise">
+<meta property="og:description" content="构建工具是啥？　　说到构建工具，我往往会在前面加「自动化」三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手的。如今有很多成熟的构建工具可供使用，webpack、grunt等等很是流行，但是苦于没有什么大项目的经验，对这些的应用经验少之又少，这就待以后填坑了。作为一个开源的持续集成构建项目，我们可以将自己的github项目加入到他的构建序列中来进行自动构建。
+
+如何关联gith">
+<meta property="og:image" content="http://i2.muimg.com/588926/eca4cd6abaf11913.png">
+<meta property="og:updated_time" content="2017-05-11T11:10:47.559Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js">
+<meta name="twitter:description" content="构建工具是啥？　　说到构建工具，我往往会在前面加「自动化」三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手的。如今有很多成熟的构建工具可供使用，webpack、grunt等等很是流行，但是苦于没有什么大项目的经验，对这些的应用经验少之又少，这就待以后填坑了。作为一个开源的持续集成构建项目，我们可以将自己的github项目加入到他的构建序列中来进行自动构建。
+
+如何关联gith">
+<meta name="twitter:image" content="http://i2.muimg.com/588926/eca4cd6abaf11913.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/CV">简历</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-构建工具Nightmare-JS与Travis-CI" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/05/11/构建工具Nightmare-JS与Travis-CI/" class="article-date">
+  <time datetime="2017-05-11T10:01:54.000Z" itemprop="datePublished">2017-05-11</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      自动构建（检查）工具Travis-CI与B端测试工具Nightmare.js
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h1 id="构建工具是啥？"><a href="#构建工具是啥？" class="headerlink" title="构建工具是啥？"></a>构建工具是啥？</h1><p>　　说到构建工具，我往往会在前面加「自动化」三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手的。如今有很多成熟的构建工具可供使用，webpack、grunt等等很是流行，但是苦于没有什么大项目的经验，对这些的应用经验少之又少，这就待以后填坑了。作为一个开源的持续集成构建项目，我们可以将自己的github项目加入到他的构建序列中来进行自动构建。</p>
+<p><hr></p>
+<h3 id="如何关联github与Travis-CI？"><a href="#如何关联github与Travis-CI？" class="headerlink" title="如何关联github与Travis-CI？"></a>如何关联github与Travis-CI？</h3><a id="more"></a>
+<p>用github账号登录Travis官网，授权之后不出意外就会自动启用Travis-CI的服务。</p>
+<h3 id="怎么配置？"><a href="#怎么配置？" class="headerlink" title="怎么配置？"></a>怎么配置？</h3><p>需要在项目根目录里创建一个.travis.yml文件，内容为：</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">language: node_js</div><div class="line"></div><div class="line">node_js:  </div><div class="line"></div><div class="line">	- node</div></pre></td></tr></table></figure>
+</code></pre><p>之后就可以选择其他的基于node的测试框架，加入依赖。而后要注意有test节点在你的package.json里面：<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>:&#123;</div><div class="line">  <span class="string">"test"</span>:<span class="string">"******"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其实还可以在.travis.yml里面配置挂钩来从程序上安排push行为。<br><br><br><br><br><br></p>
+<h1 id="接下来就是Nightmare-js"><a href="#接下来就是Nightmare-js" class="headerlink" title="接下来就是Nightmare.js"></a>接下来就是Nightmare.js</h1><p><br><br>    这是个很有意思的工具，能模拟人类操作对网页的操作，并设置期待来判断是否成功，我的理解就是个能替代人力来检验产品的工具，具体操作还有待探究（附上管网图，大爱）<br>    <img src="http://i2.muimg.com/588926/eca4cd6abaf11913.png" alt="Nightmare.js官网截图"></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/22/如何在同一机器上管理两个Github账号？/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何在同一机器上管理两个Github账号？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/08/查重/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          查重函数
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2017 ABISE<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

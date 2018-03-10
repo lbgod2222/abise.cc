@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>超好用的同步测试应用--Browser-sync | Abise</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="很惭愧，当初接触到socket.io的时候权当它是一个单单为chat功能开发的一个具体应用，直到我看到了这个Browser-sync，默认端口3000，接受同一IP字段的访问，当.html .css .js等文件发生改变的时候就会接受，emit改变到view层，真正触一发而动全身（虽说实话起作用目前看起来就是省了一次手动刷新），但至少看起来很cool有没有…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超好用的同步测试应用--Browser-sync">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/超好用的同步测试应用-Browser-sync/index.html">
+<meta property="og:site_name" content="Abise">
+<meta property="og:description" content="很惭愧，当初接触到socket.io的时候权当它是一个单单为chat功能开发的一个具体应用，直到我看到了这个Browser-sync，默认端口3000，接受同一IP字段的访问，当.html .css .js等文件发生改变的时候就会接受，emit改变到view层，真正触一发而动全身（虽说实话起作用目前看起来就是省了一次手动刷新），但至少看起来很cool有没有…">
+<meta property="og:updated_time" content="2017-04-04T14:00:38.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="超好用的同步测试应用--Browser-sync">
+<meta name="twitter:description" content="很惭愧，当初接触到socket.io的时候权当它是一个单单为chat功能开发的一个具体应用，直到我看到了这个Browser-sync，默认端口3000，接受同一IP字段的访问，当.html .css .js等文件发生改变的时候就会接受，emit改变到view层，真正触一发而动全身（虽说实话起作用目前看起来就是省了一次手动刷新），但至少看起来很cool有没有…">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/CV">简历</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-超好用的同步测试应用-Browser-sync" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2017/04/04/超好用的同步测试应用-Browser-sync/" class="article-date">
+  <time datetime="2017-04-04T13:38:53.000Z" itemprop="datePublished">2017-04-04</time>
+</a>
+		</span>
+		<span class="meta-elements author">ABISE</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      超好用的同步测试应用--Browser-sync
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>　　很惭愧，当初接触到socket.io的时候权当它是一个单单为chat功能开发的一个具体应用，直到我看到了这个Browser-sync，默认端口3000，接受同一IP字段的访问，当.html .css .js等文件发生改变的时候就会接受，emit改变到view层，真正触一发而动全身（虽说实话起作用目前看起来就是省了一次手动刷新），但至少看起来很cool有没有…<br><a id="more"></a><br>　　依赖node，全局安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g browser-sync</div></pre></td></tr></table></figure></p>
+<p><br><br>设置颇多，但我基本上就是在根目录进行使用，默认设置自动get名为index.html的文件，在根目录处启动可同时设置监听文件对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser-sync start --server --files &quot;*.html, *.css, *.js&quot;    //(逗号后面有空格)</div></pre></td></tr></table></figure></p>
+<p><br><br>最重要的还是移动端的实时查看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[BS] Access URLs</div><div class="line"></div><div class="line">   local:http://localhost:3000 (本地查看)</div><div class="line">External:http://192.168.100:3000 (移动端输入，反正我的是这样)</div></pre></td></tr></table></figure></p>
+<p>查看从手机页面也被sync效果吧 –</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/08/查重/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          查重函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/15/JS做VersionCompare/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          JS做VersionCompare
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Abise</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2017 ABISE<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
